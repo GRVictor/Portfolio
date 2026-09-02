@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { GitHubIcon } from "@/components/brand-icons";
@@ -20,12 +21,24 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
   }
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className={projects.length === 1 ? "grid max-w-2xl gap-4" : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"}>
       {projects.map((project) => (
-        <Card className="group transition-colors hover:border-foreground/20" key={project.slug}>
+        <Card className="group overflow-hidden transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md" key={project.slug}>
+          <div className="relative aspect-[16/9] overflow-hidden border-b bg-muted">
+            <Image
+              alt={project.imageAlt}
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+              fill
+              sizes="(max-width: 640px) 100vw, 640px"
+              src={project.image}
+            />
+          </div>
           <CardHeader>
             <div className="flex items-center justify-between gap-4">
-              <Badge variant="outline">{project.type}</Badge>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline">{project.type}</Badge>
+                <Badge variant="secondary">{project.year}</Badge>
+              </div>
               {project.repositoryUrl ? (
                 <a aria-label={`Repositorio de ${project.title}`} className="rounded-sm text-muted-foreground hover:text-foreground" href={project.repositoryUrl} rel="noreferrer" target="_blank">
                   <GitHubIcon className="size-4" />
@@ -38,10 +51,15 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
           <CardContent className="flex flex-wrap gap-2">
             {project.stack.slice(0, 3).map((item) => <TechBadge key={item}>{item}</TechBadge>)}
           </CardContent>
-          <CardFooter className="mt-auto">
+          <CardFooter className="mt-auto justify-between gap-4">
             <Link className="inline-flex items-center gap-2 text-sm font-medium hover:underline" href={`/proyectos/${project.slug}`}>
               Ver detalles <ArrowUpRight className="size-4" />
             </Link>
+            {project.liveUrl ? (
+              <a className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline" href={project.liveUrl} rel="noreferrer" target="_blank">
+                Ver sitio <ArrowUpRight className="size-4" />
+              </a>
+            ) : null}
           </CardFooter>
         </Card>
       ))}

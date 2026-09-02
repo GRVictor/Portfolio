@@ -2,6 +2,7 @@ export type ProjectType =
   | "Plataforma empresarial"
   | "Aplicación full-stack"
   | "Aplicación frontend"
+  | "Landing page"
   | "Backend / API"
   | "Proyecto de datos"
   | "Herramienta de desarrollo"

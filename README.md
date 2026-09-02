@@ -36,7 +36,15 @@ Sistema desarrollado a medida para centralizar, digitalizar y automatizar proces
 
 El sistema es software privado. Este repositorio no contiene código, credenciales, endpoints internos, información de clientes ni datos confidenciales de la empresa.
 
-[Consultar el caso de estudio](https://codestrokes.tech/proyectos/plataforma-empresarial-erp-crm-pos)
+[Consultar el caso de estudio](https://codestrokes.tech/proyectos/plataforma-empresarial-erp-crm-pos) · [Visitar plataforma](https://app.monsync.com.mx)
+
+### Metal Festival Landing Page
+
+Proyecto personal de práctica frontend desarrollado en 2024 para presentar un festival ficticio de música metal. Incluye navegación por secciones, programación por escenarios, galería dinámica y opciones visuales de boletos.
+
+`HTML5` `Sass` `JavaScript` `Gulp` `NPM`
+
+[Ver proyecto](https://grvictor.github.io/metal_festival/) · [Consultar repositorio](https://github.com/GRVictor/metal_festival)
 
 ## Stack tecnológico
 
