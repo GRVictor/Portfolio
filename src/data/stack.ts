@@ -1,0 +1,25 @@
+import type { Technology } from "@/types";
+
+export const technologies: Technology[] = [
+  { name: "React", category: "Frontend" },
+  { name: "Angular", category: "Frontend" },
+  { name: "TypeScript", category: "Frontend" },
+  { name: "JavaScript", category: "Frontend" },
+  { name: "HTML5", category: "Frontend" },
+  { name: "CSS3", category: "Frontend" },
+  { name: "Laravel", category: "Backend" },
+  { name: "PHP", category: "Backend" },
+  { name: "APIs REST", category: "Backend" },
+  { name: "MySQL", category: "Bases de datos" },
+  { name: "Arquitectura MVC", category: "Arquitectura y desarrollo" },
+  { name: "Desarrollo ERP", category: "Arquitectura y desarrollo" },
+  { name: "Desarrollo CRM", category: "Arquitectura y desarrollo" },
+  { name: "Desarrollo POS", category: "Arquitectura y desarrollo" },
+  { name: "Sistemas empresariales", category: "Arquitectura y desarrollo" },
+  { name: "Automatización de procesos", category: "Arquitectura y desarrollo" },
+  { name: "Linux", category: "DevOps e infraestructura" },
+  { name: "DigitalOcean", category: "DevOps e infraestructura" },
+  { name: "Despliegue en VPS", category: "DevOps e infraestructura" },
+  { name: "Docker", category: "DevOps e infraestructura" },
+  { name: "Git", category: "Herramientas" },
+];
