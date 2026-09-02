@@ -66,7 +66,7 @@ Características principales:
 - Navegación responsive y accesible.
 - Modos claro y oscuro.
 - Animaciones vinculadas al scroll con soporte para movimiento reducido.
-- Metadata, Open Graph, sitemap y robots configurados.
+- Metadata, imagen Open Graph, sitemap y robots configurados.
 - Contenido desacoplado de los componentes para facilitar su mantenimiento.
 
 ### Tecnologías del sitio

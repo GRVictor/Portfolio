@@ -16,6 +16,8 @@ export const personalInfo = {
 
 export const siteConfig = {
   title: `${personalInfo.brand} | ${personalInfo.role}`,
+  socialImage: "/og-image.png",
+  socialImageAlt: "Code Strokes - Software escalable para operaciones reales",
   description:
     "Full-Stack Developer especializado en aplicaciones empresariales, plataformas ERP, CRM y POS, APIs REST y automatización de procesos.",
   heroStatement:

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1055 65) rotate(137) scale(550 440)">
+      <stop stop-color="#315B3C" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#111311" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="90" y1="0" x2="1110" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#93D6A5" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#93D6A5" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#93D6A5" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".045"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="#111311"/>
+  <rect width="1200" height="630" rx="28" fill="url(#glow)"/>
+  <rect width="1200" height="630" rx="28" fill="url(#grid)"/>
+  <rect x="42" y="42" width="1116" height="546" rx="22" stroke="#FFFFFF" stroke-opacity=".12"/>
+
+  <rect x="82" y="78" width="54" height="54" rx="13" fill="#E1F3E5"/>
+  <path d="m105 94-11 11 11 11M114 94l11 11-11 11M115 89l-11 32" stroke="#1C3F25" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="154" y="115" fill="#F4F6F2" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="-.4">Code Strokes</text>
+  <text x="1118" y="111" fill="#9BA39B" font-family="monospace" font-size="13" text-anchor="end" letter-spacing="2">PORTFOLIO / 2026</text>
+
+  <text x="82" y="218" fill="#93D6A5" font-family="monospace" font-size="18" letter-spacing="2">FULL-STACK DEVELOPER / SOFTWARE ENGINEER</text>
+  <text x="78" y="310" fill="#F4F6F2" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" letter-spacing="-2.6">Software escalable para</text>
+  <text x="78" y="380" fill="#F4F6F2" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" letter-spacing="-2.6">operaciones reales.</text>
+
+  <text x="82" y="438" fill="#AEB5AE" font-family="Arial, Helvetica, sans-serif" font-size="21">Aplicaciones empresariales, APIs REST y automatización de procesos.</text>
+
+  <rect x="82" y="486" width="181" height="42" rx="21" fill="#FFFFFF" fill-opacity=".07" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <text x="172.5" y="513" fill="#DCE3DC" font-family="monospace" font-size="14" text-anchor="middle">ERP / CRM / POS</text>
+  <rect x="277" y="486" width="127" height="42" rx="21" fill="#FFFFFF" fill-opacity=".07" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <text x="340.5" y="513" fill="#DCE3DC" font-family="monospace" font-size="14" text-anchor="middle">APIs REST</text>
+  <rect x="418" y="486" width="180" height="42" rx="21" fill="#FFFFFF" fill-opacity=".07" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <text x="508" y="513" fill="#DCE3DC" font-family="monospace" font-size="14" text-anchor="middle">CLOUD / LINUX</text>
+
+  <rect x="82" y="556" width="1036" height="1" fill="url(#line)"/>
+  <text x="82" y="578" fill="#828A82" font-family="Arial, Helvetica, sans-serif" font-size="14">Victor Manuel García Rojas</text>
+  <text x="1118" y="578" fill="#93D6A5" font-family="monospace" font-size="14" text-anchor="end">codestrokes.tech</text>
+</svg>

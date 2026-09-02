@@ -26,13 +26,22 @@ export const metadata: Metadata = {
     siteName: personalInfo.brand,
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: siteConfig.title }],
+    images: [
+      {
+        url: siteConfig.socialImage,
+        secureUrl: siteConfig.socialImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.socialImageAlt,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/opengraph-image"],
+    images: [siteConfig.socialImage],
   },
 };
 

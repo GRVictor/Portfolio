@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { personalInfo } from "@/config/site";
+import { personalInfo, siteConfig } from "@/config/site";
 
 interface PageMetadataOptions {
   title: string;
@@ -21,13 +21,22 @@ export function createPageMetadata({ title, description, path }: PageMetadataOpt
       url,
       title: socialTitle,
       description,
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: socialTitle }],
+      images: [
+        {
+          url: siteConfig.socialImage,
+          secureUrl: siteConfig.socialImage,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.socialImageAlt,
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: socialTitle,
       description,
-      images: ["/opengraph-image"],
+      images: [siteConfig.socialImage],
     },
   };
 }
