@@ -1,94 +1,121 @@
-# Portfolio profesional de Code Strokes
+<div align="center">
 
-Portfolio de Victor Manuel García Rojas bajo la marca Code Strokes, construido para presentar experiencia full-stack, software empresarial y proyectos técnicos mediante casos de estudio claros. El contenido profesional actual proviene de información verificada y el proyecto principal utiliza un mockup neutro para no exponer datos privados de la empresa.
+# Code Strokes
 
-## Stack del portfolio
+### Software escalable para operaciones reales
 
-- Next.js 16 con App Router
-- React 19 y TypeScript
-- Tailwind CSS 4
-- Componentes y convenciones de shadcn/ui
-- Iconos de Lucide
-- `next-themes` para modo claro y oscuro
+Portfolio profesional de **Victor Manuel García Rojas**, Full-Stack Developer / Software Engineer especializado en aplicaciones empresariales, plataformas ERP, CRM y POS, APIs REST y automatización de procesos.
 
-## Instalación
+[Ver portfolio](https://codestrokes.tech) · [GitHub](https://github.com/GRVictor) · [LinkedIn](https://linkedin.com/in/victor-garc%C3%ADa-245150357) · [Contacto](mailto:grojasvictor@gmail.com)
 
-Requisitos: Node.js 20.19 o posterior y npm.
+</div>
+
+---
+
+## Sobre mí
+
+Soy Ingeniero en Desarrollo y Gestión de Software y trabajo como Full-Stack Developer, desarrollando soluciones web empresariales de extremo a extremo.
+
+Mi experiencia se ha centrado en sistemas ERP, CRM y POS personalizados, participando en frontend, backend, bases de datos, APIs, arquitectura, despliegue e infraestructura. Busco construir software que no sólo funcione técnicamente, sino que también simplifique procesos y responda a necesidades reales del negocio.
+
+Actualmente trabajo en **Tecnologías Plásticas Jorial**, donde participo en el desarrollo y evolución de su plataforma web corporativa y de sistemas empresariales personalizados.
+
+## Proyecto principal
+
+### Plataforma empresarial ERP / CRM / POS
+
+Sistema desarrollado a medida para centralizar, digitalizar y automatizar procesos relacionados con inventario, ventas, clientes, cotizaciones y operaciones internas.
+
+| Alcance | Resultado reportado |
+| --- | --- |
+| Plataforma | Aproximadamente 35 módulos funcionales |
+| Integración | Aproximadamente 50 endpoints REST |
+| Operación | Reducción aproximada del 80% en tiempos operativos |
+| Infraestructura | VPS sobre DigitalOcean y Linux |
+| Arquitectura | MVC, MySQL y APIs REST preparadas para nuevos módulos |
+
+El sistema es software privado. Este repositorio no contiene código, credenciales, endpoints internos, información de clientes ni datos confidenciales de la empresa.
+
+[Consultar el caso de estudio](https://codestrokes.tech/proyectos/plataforma-empresarial-erp-crm-pos)
+
+## Stack tecnológico
+
+**Frontend**
+
+`React` `Angular` `TypeScript` `JavaScript` `HTML5` `CSS3`
+
+**Backend y datos**
+
+`Laravel` `PHP` `APIs REST` `MySQL`
+
+**Arquitectura empresarial**
+
+`MVC` `ERP` `CRM` `POS` `Automatización de procesos`
+
+**Infraestructura y herramientas**
+
+`Linux` `DigitalOcean` `VPS` `Docker` `Git`
+
+## Este portfolio
+
+El sitio está diseñado como una presentación profesional orientada a producto. En lugar de limitarse a enumerar tecnologías, documenta qué se construyó, qué problema buscaba resolver y cuál fue mi participación.
+
+Características principales:
+
+- Caso de estudio profesional con contenido verificable.
+- Navegación responsive y accesible.
+- Modos claro y oscuro.
+- Animaciones vinculadas al scroll con soporte para movimiento reducido.
+- Metadata, Open Graph, sitemap y robots configurados.
+- Contenido desacoplado de los componentes para facilitar su mantenimiento.
+
+### Tecnologías del sitio
+
+`Next.js 16` `React 19` `TypeScript` `Tailwind CSS 4` `shadcn/ui` `Motion` `Lucide`
+
+## Estructura
+
+```text
+src/
+├── app/          Rutas, páginas y metadata
+├── components/   Componentes del sitio y UI
+├── config/       Identidad y configuración general
+├── data/         Proyectos, experiencia y tecnologías
+├── lib/          Utilidades
+└── types/        Modelos de contenido
+```
+
+## Desarrollo local
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000).
-
-Para verificar la versión de producción:
+Verificación de producción:
 
 ```bash
 npm run lint
 npm run build
-npm start
 ```
 
-## Estructura de contenido
+La URL pública se configura mediante:
 
-La información editable está separada de los componentes de presentación:
-
-```txt
-src/
-  app/                 Rutas, metadata, sitemap y robots
-  components/          Componentes reutilizables y componentes UI
-  config/site.ts       Identidad, enlaces, navegación y textos generales
-  data/projects.ts     Proyectos y casos de estudio
-  data/experience.ts   Experiencia, educación, idiomas y fortalezas
-  data/stack.ts        Tecnologías
-  types/index.ts       Tipos de contenido
+```env
+NEXT_PUBLIC_SITE_URL=https://codestrokes.tech
 ```
-
-## Información personal
-
-Edita `src/config/site.ts` para cambiar nombre, rol, ubicación, correo y enlaces sociales. Define `NEXT_PUBLIC_SITE_URL` con el dominio de producción para generar correctamente URLs canónicas, sitemap y robots:
-
-```bash
-NEXT_PUBLIC_SITE_URL=https://tu-dominio.com
-```
-
-## Proyectos
-
-Agrega objetos que cumplan el tipo `Project` en `src/data/projects.ts`. El `slug` crea automáticamente la ruta `/proyectos/[slug]`. Campos como `problem`, `architecture`, `impact`, `infrastructure`, `features`, `challenges`, `learnings` y `gallery` son opcionales y no se renderizan cuando están ausentes.
-
-Usa `featured: true` para destacar un proyecto. Los proyectos académicos deben agregarse a `academicProjects` únicamente cuando exista información real. Guarda capturas o mockups en `public/projects/` y referencia la ruta como `/projects/archivo.webp`.
-
-Si una imagen no corresponde al sistema real, utiliza `imageIsMockup: true` y explica su carácter representativo. No agregues código privado, credenciales, endpoints internos ni datos empresariales sensibles.
-
-## Experiencia, educación e idiomas
-
-Edita `src/data/experience.ts`. Las colecciones `experiences`, `education`, `languages` y `professionalStrengths` alimentan la página `/sobre-mi` y las secciones de experiencia del inicio.
-
-## Tecnologías
-
-Edita `src/data/stack.ts`. Las categorías disponibles están definidas mediante `TechnologyCategory` en `src/types/index.ts`.
-
-## Tema y colores
-
-Los tokens visuales están en `src/app/globals.css`, dentro de `:root` y `.dark`. Siguen el modelo semántico de shadcn/ui y utilizan OKLCH. Modifica estas variables en lugar de agregar colores aislados a cada componente.
 
 ## Contacto
 
-La página `/contacto` prioriza correo, LinkedIn y GitHub. No incluye un formulario ficticio ni requiere backend; el CTA principal abre directamente el cliente de correo.
+- **Email:** [grojasvictor@gmail.com](mailto:grojasvictor@gmail.com)
+- **LinkedIn:** [Victor García](https://linkedin.com/in/victor-garc%C3%ADa-245150357)
+- **GitHub:** [@GRVictor](https://github.com/GRVictor)
+- **Ubicación:** Estado de México, México
 
-## SEO
+---
 
-El proyecto incluye metadata por ruta, Open Graph, Twitter Card, `sitemap.xml`, `robots.txt`, manifest, favicon SVG e imagen social generada con Next.js.
+<div align="center">
 
-## Despliegue
+Desarrollado bajo la marca **Code Strokes**.
 
-La opción más directa es Vercel:
-
-1. Sube el proyecto a un repositorio Git.
-2. Importa el repositorio en Vercel.
-3. Conserva la configuración predeterminada para Next.js.
-4. Configura `NEXT_PUBLIC_SITE_URL` con el dominio de producción.
-5. Ejecuta `npm run lint` y `npm run build` antes de publicar.
-
-También puede desplegarse en cualquier plataforma compatible con Node.js ejecutando `npm run build` y posteriormente `npm start`.
+</div>

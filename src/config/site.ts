@@ -11,7 +11,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/victor-garc%C3%ADa-245150357",
   availableForOpportunities: false,
   availabilityLabel: "Disponible para nuevas oportunidades",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://codestrokes.tech",
 } as const;
 
 export const siteConfig = {
