@@ -119,7 +119,7 @@ export function ProjectScrollStory() {
           className="absolute bottom-8 z-30 font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase sm:bottom-10 sm:text-xs"
           style={reduceMotion ? { opacity: 0 } : { opacity: introOpacity }}
         >
-          Desplázate para explorar
+          
         </motion.p>
 
         <div className="container-shell relative grid h-full place-items-center py-20">
