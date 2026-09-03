@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -68,15 +68,15 @@ function StoryTile({
   progress: MotionValue<number>;
   reduceMotion: boolean | null;
 }) {
-  const start = 0.3 + index * 0.025;
-  const end = 0.62 + index * 0.025;
+  const start = 0.24 + index * 0.022;
+  const end = 0.58 + index * 0.022;
   const opacity = useTransform(progress, [0, start, end], [0, 0, 1]);
   const scale = useTransform(progress, [0, start, end], [0.55, 0.55, 1]);
   const y = useTransform(progress, [0, start, end], [22, 22, 0]);
 
   return (
     <motion.div
-      className={`project-story-tile relative z-0 flex min-h-28 flex-col overflow-hidden rounded-xl border border-foreground/15 bg-card p-4 shadow-[0_10px_35px_-25px_rgba(0,0,0,0.45)] sm:min-h-32 sm:p-5 lg:min-h-28 lg:p-4 ${className}`}
+      className={`project-story-tile relative z-0 flex min-h-28 flex-col overflow-hidden rounded-xl border border-foreground/15 bg-card p-4 shadow-[0_10px_35px_-25px_rgba(0,0,0,0.45)] will-change-transform sm:min-h-32 sm:p-5 lg:min-h-28 lg:p-4 ${className}`}
       style={reduceMotion ? undefined : { opacity, scale, y }}
     >
       <div className="flex items-center justify-between gap-3 border-b pb-3">
@@ -99,16 +99,16 @@ export function ProjectScrollStory() {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  const centerScale = useTransform(scrollYProgress, [0, 0.16, 0.78], [5.5, 5.5, 1]);
-  const centerRadius = useTransform(scrollYProgress, [0, 0.2, 0.78], [0, 0, 18]);
-  const centerShadow = useTransform(
-    scrollYProgress,
-    [0.45, 0.82],
-    ["0 0 0 rgba(0,0,0,0)", "0 24px 80px -32px rgba(0,0,0,0.5)"],
-  );
-  const introOpacity = useTransform(scrollYProgress, [0, 0.08, 0.22], [1, 1, 0]);
-  const headingOpacity = useTransform(scrollYProgress, [0.6, 0.82], [0, 1]);
-  const headingY = useTransform(scrollYProgress, [0.6, 0.82], [18, 0]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 110,
+    damping: 28,
+    mass: 0.28,
+    restDelta: 0.001,
+  });
+  const centerScale = useTransform(smoothProgress, [0, 0.08, 0.72], [3.8, 3.8, 1]);
+  const introOpacity = useTransform(smoothProgress, [0, 0.06, 0.18], [1, 1, 0]);
+  const headingOpacity = useTransform(smoothProgress, [0.54, 0.74], [0, 1]);
+  const headingY = useTransform(smoothProgress, [0.54, 0.74], [14, 0]);
 
   return (
     <section className="project-scroll-story relative border-y bg-muted/20" ref={sectionRef}>
@@ -125,12 +125,12 @@ export function ProjectScrollStory() {
         <div className="container-shell relative grid h-full place-items-center py-20">
           <div className="grid w-full max-w-6xl grid-cols-2 grid-rows-[auto_minmax(9rem,1fr)_auto] items-stretch gap-3 sm:gap-5 lg:grid-cols-[1fr_1fr_minmax(240px,1.45fr)_1fr_1fr] lg:grid-rows-3">
             {tiles.map((tile, index) => (
-              <StoryTile {...tile} index={index} key={tile.eyebrow} progress={scrollYProgress} reduceMotion={reduceMotion} />
+              <StoryTile {...tile} index={index} key={tile.eyebrow} progress={smoothProgress} reduceMotion={reduceMotion} />
             ))}
 
             <motion.div
-              className="project-story-center relative z-20 w-[52%] justify-self-center overflow-hidden border bg-card [grid-area:2/1/3/3] sm:w-[44%] lg:w-full lg:[grid-area:2/3]"
-              style={reduceMotion ? { borderRadius: 18 } : { borderRadius: centerRadius, boxShadow: centerShadow, scale: centerScale }}
+              className="project-story-center relative z-20 w-[52%] justify-self-center overflow-hidden rounded-xl border bg-card shadow-[0_24px_80px_-32px_rgba(0,0,0,0.5)] will-change-transform [grid-area:2/1/3/3] sm:w-[44%] lg:w-full lg:[grid-area:2/3]"
+              style={reduceMotion ? undefined : { scale: centerScale }}
             >
               <div className="relative aspect-[4/5] w-full min-w-0 sm:aspect-[16/10]">
                 <Image
