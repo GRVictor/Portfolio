@@ -1,5 +1,6 @@
 export type ProjectType =
   | "Plataforma empresarial"
+  | "Sitio corporativo"
   | "Aplicación full-stack"
   | "Aplicación frontend"
   | "Landing page"
@@ -11,6 +12,13 @@ export type ProjectType =
 export interface ProjectLink {
   label: string;
   href: string;
+}
+
+export interface ProjectVersion {
+  name: string;
+  status: string;
+  description: string;
+  stack: string[];
 }
 
 export interface Project {
@@ -33,6 +41,7 @@ export interface Project {
   impact?: string[];
   infrastructure?: string;
   myRole?: string;
+  versions?: ProjectVersion[];
   features?: string[];
   technicalDecisions?: string[];
   challenges?: string[];

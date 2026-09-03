@@ -29,8 +29,8 @@ export default function ProjectsPage() {
         <div className="container-shell section-spacing">
           <SectionHeader
             className="mb-10"
-            description="Espacio preparado para documentar proyectos académicos, experimentos y pruebas de concepto a partir de información real."
-            eyebrow="Archivo"
+            description="Proyectos profesionales adicionales, prácticas frontend y futuras piezas académicas documentadas a partir de información real."
+            eyebrow="Más trabajo"
             title="Otros proyectos"
           />
           <OtherProjects projects={otherProjects} />

@@ -1,7 +1,6 @@
 import { AboutPreview } from "@/components/about-preview";
 import { ContactCta } from "@/components/contact-cta";
 import { ExperienceSection } from "@/components/experience-section";
-import { FeaturedProjects } from "@/components/featured-projects";
 import { Hero } from "@/components/hero";
 import { ProjectScrollStory } from "@/components/project-scroll-story";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -12,7 +11,6 @@ export default function HomePage() {
     <>
       <Hero />
       <ProjectScrollStory />
-      <ScrollReveal><FeaturedProjects /></ScrollReveal>
       <ScrollReveal><ExperienceSection /></ScrollReveal>
       <ScrollReveal><StackSection /></ScrollReveal>
       <ScrollReveal><AboutPreview /></ScrollReveal>

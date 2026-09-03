@@ -66,6 +66,78 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "sitio-corporativo-catalogo-jorial",
+    title: "Sitio corporativo y catálogo Jorial",
+    shortDescription:
+      "Plataforma corporativa con catálogo de productos, buscador, blog y administración de contenido, actualmente en evolución hacia Laravel.",
+    type: "Sitio corporativo",
+    year: "2024 - Actualidad",
+    stack: [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "JavaScript",
+      "Sass",
+      "Blade",
+      "Tailwind CSS",
+      "Filament",
+      "Gulp",
+      "Vite",
+    ],
+    featured: false,
+    image: "/projects/jorial-corporate.webp",
+    imageAlt: "Página principal del sitio corporativo de Tecnologías Plásticas Jorial",
+    confidentialNote:
+      "La captura corresponde exclusivamente al sitio público. La V2 no ha sido publicada y este caso no expone configuración, credenciales, datos administrativos ni código privado.",
+    overview:
+      "Proyecto web corporativo desarrollado para Tecnologías Plásticas Jorial. La versión pública reúne presencia institucional, catálogo de productos, búsqueda, blog y canales de contacto dentro de una aplicación PHP renderizada en servidor.",
+    problem:
+      "El reto técnico fue concentrar contenido institucional y un catálogo consultable en una experiencia responsive, permitiendo además actualizar productos y publicaciones sin modificar directamente las vistas.",
+    solution:
+      "La primera versión se construyó con una arquitectura MVC personalizada en PHP, persistencia MySQL y un panel propio para administrar productos y entradas. Actualmente existe una V2 no publicada que migra el núcleo del catálogo a Laravel y Filament.",
+    architecture:
+      "La versión pública utiliza un front controller, router propio, controladores, vistas PHP y modelos Active Record sobre MySQL. La V2 adopta Laravel, Eloquent y Blade, con administración mediante Filament y assets procesados con Vite.",
+    myRole:
+      "Desarrollo full-stack de la plataforma pública y de su evolución técnica, trabajando en interfaz, lógica de servidor, modelado de datos, administración de contenido, búsqueda y flujo de assets.",
+    versions: [
+      {
+        name: "Versión pública",
+        status: "En producción",
+        description:
+          "Aplicación PHP server-rendered con arquitectura MVC personalizada, catálogo paginado, búsqueda, blog, contacto y administración propia de productos y entradas.",
+        stack: ["PHP", "MySQL", "JavaScript", "Sass", "Gulp"],
+      },
+      {
+        name: "V2 Laravel",
+        status: "En desarrollo / no publicada",
+        description:
+          "Evolución del catálogo con modelos Eloquent, categorías jerárquicas, búsqueda y filtros, URLs por slug, fichas de producto y panel administrativo con Filament.",
+        stack: ["Laravel 12", "Blade", "Tailwind CSS", "Filament", "Vite"],
+      },
+    ],
+    features: [
+      "Catálogo paginado y fichas individuales de producto",
+      "Buscador por información y especificaciones de producto",
+      "Blog corporativo con publicaciones administrables",
+      "Panel propio para gestionar productos y entradas",
+      "Formulario de contacto con validación y envío mediante SMTP",
+      "Navegación responsive y modo visual persistente",
+    ],
+    technicalDecisions: [
+      "Separación de rutas, controladores, modelos y vistas mediante un MVC personalizado en la versión pública.",
+      "Pipeline Gulp para compilar Sass, minificar assets y generar variantes de imágenes.",
+      "Migración progresiva a Laravel y Eloquent para formalizar el dominio del catálogo.",
+      "Uso de slugs, categorías jerárquicas, especificaciones flexibles y soft deletes en la V2.",
+    ],
+    gallery: [
+      {
+        src: "/projects/jorial-corporate.webp",
+        alt: "Vista pública del sitio corporativo Jorial",
+      },
+    ],
+    liveUrl: "https://www.jorial.com.mx",
+  },
+  {
     slug: "metal-festival-landing-page",
     title: "Metal Festival Landing Page",
     shortDescription:

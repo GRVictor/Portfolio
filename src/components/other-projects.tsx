@@ -21,10 +21,14 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
   }
 
   return (
-    <div className={projects.length === 1 ? "grid max-w-2xl gap-4" : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"}>
+    <div className={projects.length <= 2 ? "grid gap-4 sm:grid-cols-2" : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"}>
       {projects.map((project) => (
         <Card className="group overflow-hidden transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md" key={project.slug}>
-          <div className="relative aspect-[16/9] overflow-hidden border-b bg-muted">
+          <Link
+            aria-label={`Ver caso de estudio: ${project.title}`}
+            className="relative block aspect-[16/9] overflow-hidden border-b bg-muted"
+            href={`/proyectos/${project.slug}`}
+          >
             <Image
               alt={project.imageAlt}
               className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
@@ -32,7 +36,7 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
               sizes="(max-width: 640px) 100vw, 640px"
               src={project.image}
             />
-          </div>
+          </Link>
           <CardHeader>
             <div className="flex items-center justify-between gap-4">
               <div className="flex flex-wrap gap-2">
@@ -45,7 +49,9 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
                 </a>
               ) : null}
             </div>
-            <CardTitle className="pt-3 text-lg">{project.title}</CardTitle>
+            <CardTitle className="pt-3 text-lg">
+              <Link className="underline-offset-4 hover:underline" href={`/proyectos/${project.slug}`}>{project.title}</Link>
+            </CardTitle>
             <p className="text-sm leading-6 text-muted-foreground">{project.shortDescription}</p>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">

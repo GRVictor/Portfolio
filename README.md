@@ -38,6 +38,14 @@ El sistema es software privado. Este repositorio no contiene código, credencial
 
 [Consultar el caso de estudio](https://codestrokes.tech/proyectos/plataforma-empresarial-erp-crm-pos) · [Visitar plataforma](https://app.monsync.com.mx)
 
+### Sitio corporativo y catálogo Jorial
+
+Plataforma corporativa en producción con catálogo, búsqueda, blog y administración de contenido. La versión pública utiliza PHP, MySQL, JavaScript y Sass bajo una arquitectura MVC personalizada. El proyecto cuenta además con una V2 no publicada en Laravel y Filament para evolucionar la gestión del catálogo.
+
+`PHP` `Laravel` `MySQL` `JavaScript` `Sass` `Filament`
+
+[Ver sitio](https://www.jorial.com.mx) · [Consultar el caso de estudio](https://codestrokes.tech/proyectos/sitio-corporativo-catalogo-jorial)
+
 ### Metal Festival Landing Page
 
 Proyecto personal de práctica frontend desarrollado en 2024 para presentar un festival ficticio de música metal. Incluye navegación por secciones, programación por escenarios, galería dinámica y opciones visuales de boletos.

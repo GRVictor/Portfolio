@@ -12,7 +12,11 @@ import type { Project } from "@/types";
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <Card className="group overflow-hidden transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-lg md:grid md:grid-cols-[1.1fr_0.9fr]">
-      <div className="relative aspect-[16/10] overflow-hidden border-b bg-muted md:aspect-auto md:min-h-[30rem] md:border-r md:border-b-0">
+      <Link
+        aria-label={`Ver caso de estudio: ${project.title}`}
+        className="relative block aspect-[16/10] overflow-hidden border-b bg-muted md:aspect-auto md:min-h-[30rem] md:border-r md:border-b-0"
+        href={`/proyectos/${project.slug}`}
+      >
         <Image
           alt={project.imageAlt}
           className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
@@ -23,14 +27,16 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         <span className="absolute top-4 left-4 rounded-md border bg-background/85 px-2 py-1 font-mono text-xs text-muted-foreground backdrop-blur">
           {String(index + 1).padStart(2, "0")}
         </span>
-      </div>
+      </Link>
       <div className="flex min-w-0 flex-col">
         <CardHeader>
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline">{project.type}</Badge>
             {project.imageIsMockup ? <Badge variant="secondary">Mockup visual</Badge> : null}
           </div>
-          <CardTitle className="pt-2 text-xl sm:text-2xl">{project.title}</CardTitle>
+          <CardTitle className="pt-2 text-xl sm:text-2xl">
+            <Link className="underline-offset-4 hover:underline" href={`/proyectos/${project.slug}`}>{project.title}</Link>
+          </CardTitle>
           <p className="text-sm leading-6 text-muted-foreground">{project.shortDescription}</p>
           {project.impact?.length ? (
             <ul className="mt-3 space-y-2 border-t pt-5">

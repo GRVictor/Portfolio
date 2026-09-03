@@ -141,7 +141,95 @@
   }
 
   .project-scroll-story {
-    height: 230svh;
+    height: var(--project-scroll-height, 340svh);
+  }
+
+  .project-beam-viewport {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .project-beam-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 4%) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 4%) 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, rgb(52 211 153 / 8%), transparent 36%);
+    background-size: 56px 56px, 56px 56px, 100% 100%;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
+
+  .project-beam-track {
+    --beam-card-width: min(82vw, 44rem);
+    display: flex;
+    width: max-content;
+    gap: clamp(1.25rem, 4vw, 4rem);
+    padding-inline: calc(50vw - var(--beam-card-width) / 2);
+    will-change: transform;
+  }
+
+  .project-beam-card {
+    width: var(--beam-card-width);
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-beam-card-processed {
+    border-color: rgb(110 231 183 / 28%);
+    background: #07110d;
+    box-shadow: 0 0 45px rgb(52 211 153 / 10%);
+  }
+
+  .project-beam-card-processed img {
+    opacity: 0.16;
+    filter: grayscale(1) contrast(1.6) brightness(0.65);
+  }
+
+  .project-beam-code {
+    color: rgb(167 243 208 / 72%);
+    background:
+      linear-gradient(90deg, rgb(5 20 14 / 94%), rgb(5 20 14 / 72%)),
+      repeating-linear-gradient(0deg, transparent 0 3px, rgb(110 231 183 / 6%) 3px 4px);
+    text-shadow: 0 0 8px rgb(52 211 153 / 35%);
+    mask-image: linear-gradient(to right, black, rgb(0 0 0 / 85%));
+  }
+
+  .project-beam-scanner {
+    width: 2px;
+    height: min(68vh, 34rem);
+    border-radius: 999px;
+    background: linear-gradient(to bottom, transparent, #a7f3d0 12%, white 50%, #a7f3d0 88%, transparent);
+    box-shadow:
+      0 0 8px rgb(167 243 208 / 95%),
+      0 0 24px rgb(52 211 153 / 75%),
+      0 0 70px rgb(52 211 153 / 38%);
+  }
+
+  .project-beam-scanner::before {
+    position: absolute;
+    inset: 4% -2.25rem;
+    content: "";
+    background: linear-gradient(to right, transparent, rgb(52 211 153 / 18%), transparent);
+    filter: blur(10px);
+  }
+
+  .project-beam-scanner::after {
+    position: absolute;
+    top: 10%;
+    left: -1rem;
+    width: 8rem;
+    height: 80%;
+    content: "";
+    background-image:
+      radial-gradient(circle at 8% 12%, #fff 0 1px, transparent 1.5px),
+      radial-gradient(circle at 22% 38%, #6ee7b7 0 1px, transparent 1.5px),
+      radial-gradient(circle at 48% 72%, #fff 0 1px, transparent 1.5px),
+      radial-gradient(circle at 68% 24%, #34d399 0 1px, transparent 1.5px),
+      radial-gradient(circle at 88% 58%, #a7f3d0 0 1px, transparent 1.5px);
+    background-size: 31px 37px, 43px 47px, 37px 41px, 53px 59px, 47px 43px;
+    filter: drop-shadow(0 0 4px #6ee7b7);
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    animation: beam-particles 2.8s linear infinite;
   }
 }
 
@@ -174,6 +262,20 @@
   }
   50% {
     transform: translateY(-6px);
+  }
+}
+
+@keyframes beam-particles {
+  from {
+    opacity: 0.35;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(5rem);
   }
 }
 
@@ -221,14 +323,8 @@
     transform: none !important;
   }
 
-  .scroll-reveal,
-  .project-story-tile,
-  .project-story-heading {
+  .scroll-reveal {
     opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .project-story-center {
     transform: none !important;
   }
 }

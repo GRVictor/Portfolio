@@ -120,6 +120,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {project.impact?.length ? <DetailSection title="Impacto"><BulletList items={project.impact} /></DetailSection> : null}
         {project.infrastructure ? <DetailSection title="Infraestructura"><p>{project.infrastructure}</p></DetailSection> : null}
         {project.myRole ? <DetailSection title="Mi participación"><p>{project.myRole}</p></DetailSection> : null}
+        {project.versions?.length ? (
+          <DetailSection title="Evolución">
+            <div className="space-y-4">
+              {project.versions.map((version) => (
+                <article className="rounded-xl border bg-card p-5 text-card-foreground shadow-xs" key={version.name}>
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <h3 className="font-semibold">{version.name}</h3>
+                    <Badge variant="secondary">{version.status}</Badge>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{version.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {version.stack.map((item) => <TechBadge key={item}>{item}</TechBadge>)}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </DetailSection>
+        ) : null}
         <DetailSection title="Stack tecnológico">
           <div className="flex flex-wrap gap-2">{project.stack.map((item) => <TechBadge key={item}>{item}</TechBadge>)}</div>
         </DetailSection>
